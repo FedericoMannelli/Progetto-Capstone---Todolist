@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Aggiunta "/" prima di "styles.css" -->
+  </head>
+  <body>
+    <h1>ToDo List</h1>
+    <!-- Modulo per la creazione di nuove attività -->
+    <form method="post" action="/">
+      <!-- Corretto "type" da "submit" a "post" -->
+      <input
+        type="text"
+        name="task"
+        placeholder="Inserisci una nuova attività"
+        required
+      />
+      <button type="submit">Aggiungi</button>
+    </form>
+    <ul>
+      <% tasks.forEach(task => { %>
+      <li>
+        <input type="checkbox" name="completedTask" value="<%= task %>" />
+        <%= task %>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
